@@ -47,10 +47,17 @@ function downloadCardChecklists (e) {
 }
 
 function getCheckedItems(e) {
-    for (var t = [], n = 0; n < e.length; n++) {
-        var r = e[n];
-        if( r.state === "complete") {
-            t.push(r.name);
+    let t = [];
+    let n = 0;
+    let f = 0;
+    for (; f < e.length; f++) {
+        if(e[f].name === 'Zutaten') {
+            for (; n < e[f].length; n++) {
+                var r = e[f][n];
+                if( r.state === "complete") {
+                    t.push(r.name);
+                }
+            }
         }
     }
     return t
