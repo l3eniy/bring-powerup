@@ -19,7 +19,6 @@ var onBtnClick = function (t, opts) {
             if (isAuthorized) {
                 console.log("option1");
             } else {
-                console.log("option2")
                 return [{
                     text: 'Bring Power-Up',
                     callback: showIframe
