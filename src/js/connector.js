@@ -2,7 +2,7 @@ var BRING_ICON = 'https://global-uploads.webflow.com/5fbe6548a005d56f0dd39a2e/5f
 
 var onBtnClick = function (t, opts) {
     console.log('Someone clicked the button');
-    let x = t.get("auth");
+    let x = t.get('member', 'private', 'auth');
     console.log(x);
 };
 

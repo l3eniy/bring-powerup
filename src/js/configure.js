@@ -1,6 +1,6 @@
 var usernameInput = document.querySelector('#username-input');
 var tokenInput = document.querySelector('#token-input');
-
+var saveButton = document.querySelector('.save-btn');
 
 function saveCredentials() {
     var t = TrelloPowerUp.iframe();
@@ -14,3 +14,6 @@ function saveCallback(t, command) {
     // Called from settings, dismiss popup
     t.closePopup();
 }
+
+
+saveButton.addEventListener('click', saveCredentials);
