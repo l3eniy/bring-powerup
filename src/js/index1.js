@@ -1,7 +1,7 @@
 
 var BRING_ICON = 'https://global-uploads.webflow.com/5fbe6548a005d56f0dd39a2e/5fc24a65f7e1555200865e1b_bring-logo.svg';
 var Promise = TrelloPowerUp.Promise
-var TRELLO_API_KEY = "d2cb57df20bf79a27dcb9a18bd6607e5"
+var TRELLO_API_KEY = "00c34f6aad85b68994bdc5dbc0c5454a"
 var API_CALLS_SLEEP_DURATION = 125
 
 
