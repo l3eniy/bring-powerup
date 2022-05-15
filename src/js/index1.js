@@ -52,8 +52,8 @@ function getCheckedItems(e) {
     let f = 0;
     for (; f < e.length; f++) {
         if(e[f].name === 'Zutaten') {
-            for (; n < e[f].length; n++) {
-                var r = e[f][n];
+            for (; n < e[f].checkItems.length; n++) {
+                var r = e[f].checkItems[n];
                 if( r.state === "complete") {
                     t.push(r.name);
                 }
