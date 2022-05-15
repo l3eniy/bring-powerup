@@ -1,32 +1,9 @@
 var BRING_ICON = 'https://global-uploads.webflow.com/5fbe6548a005d56f0dd39a2e/5fc24a65f7e1555200865e1b_bring-logo.svg';
 
-function showIframe(t) {
-    return t.popup({
-        title: 'Authorize to continue',
-        url: './authorize.html'
-    });
-}
-
 var onBtnClick = function (t, opts) {
     console.log('Someone clicked the button');
     let x = t.get('member', 'private', 'auth');
     console.log(x);
-
-    t.getRestApi()
-        // We now have an instance of the API client.
-        .isAuthorized()
-        .then(function(isAuthorized){
-            if (isAuthorized) {
-                console.log("option1");
-            } else {
-                return [{
-                    text: 'Bring Power-Up',
-                    callback: showIframe
-                }];
-
-            }
-        })
-
 };
 
 window.TrelloPowerUp.initialize({

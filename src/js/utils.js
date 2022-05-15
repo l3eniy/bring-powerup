@@ -9,6 +9,9 @@ function removeAuthToken(t, username, password) {
     return t.remove('member', 'private', 'auth')
 }
 
+
+
+
 window.utils = {
     setAuthToken: setAuthToken,
     removeAuthToken: removeAuthToken,
