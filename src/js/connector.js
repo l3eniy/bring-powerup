@@ -10,7 +10,7 @@ window.TrelloPowerUp.initialize({
             // usually you will provide a callback function to be run on button click
             // we recommend that you use a popup on click generally
             icon: BRING_ICON, // don't use a colored icon here
-            text: 'Open Popup',
+            text: 'zu Bring',
             callback: onBtnClick,
             condition: 'edit'
         }];
