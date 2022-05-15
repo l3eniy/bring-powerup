@@ -1,3 +1,4 @@
+const bringApi = require(`bring-shopping`);
 
 var BRING_ICON = 'https://global-uploads.webflow.com/5fbe6548a005d56f0dd39a2e/5fc24a65f7e1555200865e1b_bring-logo.svg';
 var Promise = TrelloPowerUp.Promise
@@ -38,10 +39,11 @@ function renderAuthPopup(e) {
 }
 
 function downloadCardChecklists (e) {
-    return getChecklists(e, "cards", e.getContext().card).then(function (t) {
+    return getChecklists(e, "cards", e.getContext().card).then(async function (t) {
         //var n = stringifyChecklist(t);
-        console.log(t)
+        // console.log(t)
         console.log(getCheckedItems(t))
+        await addToBring()
         e.closePopup()
     })
 }
@@ -54,7 +56,7 @@ function getCheckedItems(e) {
         if(e[f].name === 'Zutaten') {
             for (; n < e[f].checkItems.length; n++) {
                 var r = e[f].checkItems[n];
-                if( r.state === "complete") {
+                if( r.state === "incomplete") {
                     t.push(r.name);
                 }
             }
@@ -73,6 +75,18 @@ function getChecklists (e, t, n) {
                 o.send(null)
         })
     })
+}
+
+async function addToBring(){
+    const bring = new bringApi({mail: `benjamin.fuhlbruegge@gmail.com`, password: `9PiC!TSxnRXLrG&Q`});
+    try {
+        await bring.login();
+        console.log(`Successfully logged in as ${bring.name}`);
+        return bring;
+    } catch (e) {
+        console.error(`Error on Login: ${e.message}`);
+    }
+    const xyz = await bring.saveItem('9b7a5bb0-f4f2-4b83-b545-3fa72545216d',"Gouda", "2TL")
 }
 
 
