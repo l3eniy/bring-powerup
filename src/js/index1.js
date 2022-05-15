@@ -41,8 +41,19 @@ function downloadCardChecklists (e) {
     return getChecklists(e, "cards", e.getContext().card).then(function (t) {
         //var n = stringifyChecklist(t);
         console.log(t)
+        console.log(getCheckedItems(t))
         e.closePopup()
     })
+}
+
+function getCheckedItems(e) {
+    for (var t = [], n = 0; n < e.length; n++) {
+        var r = e[n];
+        if( r.state === "complete") {
+            t.push(r.name);
+        }
+    }
+    return t
 }
 
 function getChecklists (e, t, n) {
