@@ -1,4 +1,6 @@
 const bringApi = require(`bring-shopping`);
+const regeneratorRuntime = require("regenerator-runtime");
+require("regenerator-runtime/runtime");
 
 var BRING_ICON = 'https://global-uploads.webflow.com/5fbe6548a005d56f0dd39a2e/5fc24a65f7e1555200865e1b_bring-logo.svg';
 var Promise = TrelloPowerUp.Promise
