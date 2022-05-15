@@ -4,6 +4,18 @@ var onBtnClick = function (t, opts) {
     console.log('Someone clicked the button');
     let x = t.get('member', 'private', 'auth');
     console.log(x);
+
+    t.getRestApi()
+        // We now have an instance of the API client.
+        .isAuthorized()
+        .then(function(isAuthorized){
+            if (isAuthorized) {
+                console.log("option1");
+            } else {
+                console.log("option2");
+            }
+        })
+
 };
 
 window.TrelloPowerUp.initialize({
@@ -26,5 +38,8 @@ window.TrelloPowerUp.initialize({
             url: './configure.html',
             height: 184 // we can always resize later
         });
-    }
+    },
+}, {
+    appKey: '00c34f6aad85b68994bdc5dbc0c5454a',
+    appName: 'bring-powerup'
 });
